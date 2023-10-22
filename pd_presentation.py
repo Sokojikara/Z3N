@@ -1,12 +1,16 @@
 # Install Pandas: pip install pandas
 
 # Import Pandas
-import pandas as pd 
+import pandas as pd
 
 # Create a Pandas dataframe from list of lists
-data = [['Alex',10],['Bob',12],['Clarke',13]]
+data = [
+    ['Alex',15], 
+    ['Bob',12],
+    ['Clarke',13]  
+    ]
 df = pd.DataFrame(data,columns=['Name','Age'])
-print("DataFrame from List"        )
+print("DataFrame from List")
 print(df)
 print("\n\n")
 
@@ -23,7 +27,6 @@ print("Tail of DataFrame: ", df.tail(2))
 print("Describe of DataFrame: ", df.describe())
 print("Transpose of DataFrame: ", df.T)
 print("Sort by column of DataFrame: ", df.sort_values(by='Age'))
-print("Sort by index of DataFrame: ", df.sort_index(axis=1, ascending=False))
 print("\n\n")
 
 
@@ -63,20 +66,5 @@ print("Tail of DataFrame: ", df.tail(2))
 print("Describe of DataFrame: ", df.describe())
 print("Transpose of DataFrame: ", df.T)
 print("Sort by column of DataFrame: ", df.sort_values(by='Age'))
-print("Sort by index of DataFrame: ", df.sort_index(axis=1, ascending=False))
 print("\n\n")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

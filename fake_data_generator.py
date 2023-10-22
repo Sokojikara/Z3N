@@ -1,32 +1,27 @@
-from faker import Faker
 import csv
+from faker import Faker
+import random
 
 fake = Faker()
 
 num_users = 100
 
-users = []
+user_data = []
+
 for _ in range(num_users):
-    user = {
-        "name": fake.name(),
-        "address": fake.address(),
-        "email": fake.email(),
-        "phone_number": fake.phone_number(),
-        "birthdate": fake.date_of_birth(minimum_age=18, maximum_age=90).strftime('%Y-%m-%d')
-    }
-    users.append(user)
+    name = fake.name()
+    age = random.randint(18, 99)
+    email = fake.email()
+    phone_number = fake.phone_number()
+    address = fake.address()
+    
+    user_data.append([name, age, email, phone_number, address])
 
-csv_file_path = "fake_users.csv"
+csv_file_path = 'fake_data.csv'
 
-# Write the user data to a CSV file
-with open(csv_file_path, "w", newline="", encoding="utf-8") as csvfile:
-    fieldnames = ["name", "address", "email", "phone_number", "birthdate"]
-    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+with open(csv_file_path, mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Age', 'Email', 'Phone Number', 'Address'])
+    writer.writerows(user_data)
 
-    writer.writeheader()
-
-    for user in users:
-        writer.writerow(user)
-
-print(f"Fake user data has been generated and saved in '{csv_file_path}'")
- 
+print(f"Random user data has been generated and saved to '{csv_file_path}' file.")
