@@ -5,11 +5,11 @@ import pandas as pd
 
 # Create a Pandas dataframe from list of lists
 data = [
-    ['Alex',15], 
-    ['Bob',12],
-    ['Clarke',13]  
+    ["Alex",15], 
+    ["Bob",12],
+    ["Clarke",13]  
     ]
-df = pd.DataFrame(data,columns=['Name','Age'])
+df = pd.DataFrame(data,columns=["Name","Age"])
 print("DataFrame from List")
 print(df)
 print("\n\n")
@@ -26,13 +26,13 @@ print("Head of DataFrame: ", df.head(2))
 print("Tail of DataFrame: ", df.tail(2))
 print("Describe of DataFrame: ", df.describe())
 print("Transpose of DataFrame: ", df.T)
-print("Sort by column of DataFrame: ", df.sort_values(by='Age'))
+print("Sort by column of DataFrame: ", df.sort_values(by="Age"))
 print("\n\n")
 
 
 # Get a column from DataFrame
 print("Get a column from DataFrame")
-print(df['Name'])
+print(df["Name"])
 print("\n\n")
 
 
@@ -50,7 +50,7 @@ print("\n\n")
 
 # Read CSV file
 print("Read CSV file")
-df = pd.read_csv('pd_data.csv')
+df = pd.read_csv("pd_data.csv")
 print(df)
 print("\n\n")
 
@@ -65,6 +65,6 @@ print("Head of DataFrame: ", df.head(2))
 print("Tail of DataFrame: ", df.tail(2))
 print("Describe of DataFrame: ", df.describe())
 print("Transpose of DataFrame: ", df.T)
-print("Sort by column of DataFrame: ", df.sort_values(by='Age'))
+print("Sort by column of DataFrame: ", df.sort_values(by="Age"))
 print("\n\n")
 
